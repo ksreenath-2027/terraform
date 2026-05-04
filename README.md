@@ -1,4 +1,4 @@
-🚀 Terraform AWS EC2 Infrastructure
+🚀 Terraform AWS Infrastructure
 
 This project demonstrates how to provision AWS infrastructure using Terraform with a remote backend for state management.
 
