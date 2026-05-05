@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "us-west-2"
+  region = var.aws_region
 }
 
 data "aws_ami" "ubuntu" {
@@ -15,25 +15,9 @@ data "aws_ami" "ubuntu" {
 
 resource "aws_instance" "app_server" {
   ami           = data.aws_ami.ubuntu.id
-  instance_type = "t3.micro"
-
+  instance_type = var.instance_type
+  
   tags = {
-    Name = "terraform-practice"
-  }
-}
-
-
-resource "aws_s3_bucket" "tf_state" {
-  bucket = "terraform-state-bucket-sreenath214"
-}
-
-resource "aws_dynamodb_table" "tf_lock" {
-  name         = "terraform-locks"
-  billing_mode = "PAY_PER_REQUEST"
-  hash_key     = "LockID"
-
-  attribute {
-    name = "LockID"
-    type = "S"
+    Name = var.instance_name
   }
 }
