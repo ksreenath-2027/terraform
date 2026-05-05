@@ -10,5 +10,5 @@ variable "instance_type" {
 
 variable "instance_name" {
   description = "EC2 test instance"
-  default     = "terraform-practice"
+  default     = "terraform-practice-nginx"
 }
