@@ -1,9 +1,9 @@
 output "instance_id" {
   description = "EC2 Instance ID"
-  value       = aws_instance.app_server.id
+  value       = module.ec2.instance_id
 }
 
 output "public_ip" {
   description = "Public IP of EC2"
-  value       = aws_instance.app_server.public_ip
+  value       = module.ec2.public_ip
 }
